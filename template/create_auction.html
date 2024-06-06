@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Create Auction</title>
+  </head>
+  <body>
+    <h2>Create Auction</h2>
+    <form th:action="@{/createAuction}" method="post">
+      <label for="itemName">Item Name:</label>
+      <input type="text" id="itemName" name="itemName" required />
+      <label for="startingBid">Starting Bid:</label>
+      <input
+        type="number"
+        id="startingBid"
+        name="startingBid"
+        step="0.01"
+        required
+      />
+      <button type="submit">Create Auction</button>
+    </form>
+    <p th:if="${message}" th:text="${message}"></p>
+  </body>
+</html>
